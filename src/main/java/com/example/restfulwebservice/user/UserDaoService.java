@@ -52,4 +52,16 @@ public class UserDaoService {
 
         return null;
     }
+
+    public User updateById(int id, User user) {
+        for (User updateUser : users) {
+            if (updateUser.getId() == id) {
+                // 인덱스의 위치를 indexOf() 메서드를 활용한 이유는 삭제가 일어난 후 id를 인덱스로 하여 찾았을때 out of Bounds 가 발생하니 해당객체의 위치를 반환받아 수정
+                users.get(users.indexOf(updateUser)).setName(user.getName());
+                users.get(users.indexOf(updateUser)).setJoinDate(user.getJoinDate());
+                return user;
+            }
+        }
+        return null;
+    }
 }

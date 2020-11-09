@@ -6,6 +6,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -53,5 +54,20 @@ public class UserController {
         if(user == null){
             throw new UserNotFoundException(String.format("ID[%s] not found", id));
         }
+    }
+
+    @PutMapping("/users/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user) {
+//        User findUser = service.findOne(id);
+//
+//        if (findUser == null)
+//            return ResponseEntity.notFound().build();
+
+        User updatedUser = service.updateById(id, user);
+        if (updatedUser == null)
+            return ResponseEntity.notFound().build();
+
+//        return ResponseEntity.noContent().build();    // 204 호출
+        return ResponseEntity.ok().build();             // 200 호출
     }
 }

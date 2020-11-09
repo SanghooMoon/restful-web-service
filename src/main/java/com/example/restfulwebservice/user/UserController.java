@@ -25,7 +25,13 @@ public class UserController {
     // GET, /users/1 or /users/10 -> 서버측에 전달할때 String이 기본
     @GetMapping("/users/{id}")          // int로 선언하면 자동 형변환(String -> int)
     public User retrieveUser(@PathVariable int id) {
-        return service.findOne(id);
+        User user = service.findOne(id);
+
+        if(user == null) {
+            throw new UserNotFoundException(String.format("ID[%s] not found", id));
+        }
+
+        return user;
     }
 
     @PostMapping("/users")

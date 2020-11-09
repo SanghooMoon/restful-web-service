@@ -12,3 +12,5 @@ public HelloWorldBean helloWorldBean(@PathVariable String name){
 HTTP STATUS CODE
 200 OK
 201 Create
+
+500 Internal Server Error : 내부 서버 오류

@@ -8,3 +8,7 @@ url : @GetMapping(path = "/hello-world-bean/path-variable/{name}") 이라면 {na
 public HelloWorldBean helloWorldBean(@PathVariable String name){
         return new HelloWorldBean(String.format("Hello World, %s", name));
 }
+
+HTTP STATUS CODE
+200 OK
+201 Create

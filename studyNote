@@ -1,0 +1,10 @@
+application.properties -> 설정이름=값
+applcation.yml -> 설정이름:값
+
+@PathVariable : URL 요청에 가변인자를 사용하기 위함.
+url : @GetMapping(path = "/hello-world-bean/path-variable/{name}") 이라면 {name} 은 가변인자로 활용된다는 것이고
+
+// 매개변수를 가변인자로 설정한 이름을 같게 맞추고, @PathVariable 어노테이션 선언하여 사용
+public HelloWorldBean helloWorldBean(@PathVariable String name){
+        return new HelloWorldBean(String.format("Hello World, %s", name));
+}

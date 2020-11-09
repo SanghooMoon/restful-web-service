@@ -1,5 +1,10 @@
-# ��������Ʈ�� ȯ�漳�� ����(properties �Ǵ� yml ����)
+# 스프링부트 환경설정 파일(properties 또는 yml)
 
-# ��Ʈ��ȣ ����
+# 포트번호 변경
 server:
   port: 8088
+
+# 로그 레벨 및 설정
+logging:
+  level:
+    org.springframework: DEBUG

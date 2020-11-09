@@ -14,3 +14,9 @@ HTTP STATUS CODE
 201 Create
 
 500 Internal Server Error : 내부 서버 오류
+
+
+GET : SELECT
+POST : INSERT
+PUT : UPDATE
+DELETE : DELETE

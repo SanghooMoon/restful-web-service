@@ -15,6 +15,7 @@ HTTP STATUS CODE
 204 No Content : 성공 상태 응답 코드는 요청이 성공했으나 클라이언트가 현재 페이지에서 벗어나지 않아도 된다는 것
 
 400 Bad Request : 잘못된 요청(클라이언트)
+406 Not Acceptable : 허용할 수 없는 요청
 
 500 Internal Server Error : 내부 서버 오류
 

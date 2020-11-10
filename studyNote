@@ -9,6 +9,9 @@ public HelloWorldBean helloWorldBean(@PathVariable String name){
         return new HelloWorldBean(String.format("Hello World, %s", name));
 }
 
+@JsonIgnore : 데이터를 클라이언트에게 숨기기위한 어노테이션
+@JsonIgnoreProperties : 위와 동일하지만 일괄처리 가능 -> @JsonIgnoreProperties(value={"test", "test2"})
+
 HTTP STATUS CODE
 200 OK
 201 Create

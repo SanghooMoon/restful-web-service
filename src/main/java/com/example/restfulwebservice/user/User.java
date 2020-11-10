@@ -1,5 +1,6 @@
 package com.example.restfulwebservice.user;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,8 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@JsonIgnoreProperties(value = {"password", "ssn"})      // 일괄처리하여 데이터를 클라이언트에게 노출시키지 않는 어노테이션
+//@JsonIgnoreProperties(value = {"password", "ssn"})      // 일괄처리하여 데이터를 클라이언트에게 노출시키지 않는 어노테이션
+@JsonFilter("UserInfo")
 public class User {
 
     private Integer id;

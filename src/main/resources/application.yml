@@ -17,6 +17,9 @@ spring:
     user:
       name: username
       password: passw0rd
+  # JPA 설정
+  jpa:
+    show-sql: true
 
 # Monitoring을 위한 Actuator 설정
 management:

@@ -28,3 +28,5 @@ GET : SELECT
 POST : INSERT
 PUT : UPDATE
 DELETE : DELETE
+
+data.sql : 초기 데이터값을 입력하기 위한 쿼리문들(서버가 실행될때 자동으로 쿼리문 실행)

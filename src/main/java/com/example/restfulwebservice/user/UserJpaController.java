@@ -63,4 +63,17 @@ public class UserJpaController {
 
     }
 
+    // /jpa/users/90001/posts
+    @GetMapping("/users/{id}/posts")
+    public List<Post> retrieveAllPostsByUsers(@PathVariable int id) {
+        Optional<User> user = userRepository.findById(id);
+
+        // 유저가 존재하지 않는다면
+        if(!user.isPresent()) {
+            throw new UserNotFoundException(String.format("ID[%s] not Found", id));
+        }
+
+        return user.get().getPosts();
+    }
+
 }

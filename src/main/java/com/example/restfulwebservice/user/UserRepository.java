@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository // DB 관련된 Bean 의미                    //       PK 타입
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+
 }

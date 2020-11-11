@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.swing.text.html.Option;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -98,6 +99,28 @@ public class UserJpaController {
 
         return ResponseEntity.created(location).build();
 
+    }
+
+    @GetMapping("/posts/{id}")
+    public Post retrievePost(@PathVariable int id) {
+        Optional<Post> post = postRepository.findById(id);
+
+        if(!post.isPresent()) {
+            throw new PostNotFoundException(String.format("postId[%s] Not Found", id));
+        }
+
+        return post.get();
+    }
+
+    @DeleteMapping("/posts/{id}")
+    public void deletePost(@PathVariable int id) {
+        Optional<Post> post = postRepository.findById(id);
+
+        if(!post.isPresent()) {
+            throw new PostNotFoundException(String.format("postId[%s] Not Found", id));
+        }
+
+        postRepository.deleteById(id);
     }
 
 

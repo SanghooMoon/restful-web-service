@@ -1,5 +1,6 @@
 package com.example.restfulwebservice.exception;
 
+import com.example.restfulwebservice.user.PostNotFoundException;
 import com.example.restfulwebservice.user.UserNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +26,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler({UserNotFoundException.class, PostNotFoundException.class})
     public final ResponseEntity<Object> handleUserNotFoundException(Exception ex, WebRequest requset) {
         ExceptionResponse exceptionResponse =
                 new ExceptionResponse(new Date(), ex.getMessage(), requset.getDescription(false));

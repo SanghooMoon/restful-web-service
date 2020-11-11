@@ -12,3 +12,10 @@ logging:
 spring:
   messages:
     basename: messages
+
+# Monitoring을 위한 Actuator 설정
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
